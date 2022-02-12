@@ -7,12 +7,13 @@
 
     <ImageView
         android:id="@+id/ivPoster"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
+        android:layout_marginStart="-3dp"
         android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -20,22 +21,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/ivPoster"
-        android:textSize="24sp"
+        android:textSize="26sp"
+        android:textStyle="bold"
         tools:text="Spider-Man: No Way Home" />
 
     <TextView
         android:id="@+id/tvOverview"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvTitle"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="0dp"
         android:layout_toEndOf="@+id/ivPoster"
-        android:textSize="16sp"
+        android:fontFamily="casual"
+        android:textSize="10sp"
         tools:text="Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man." />
 
 </RelativeLayout>

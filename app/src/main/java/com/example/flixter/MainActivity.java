@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "onSuccess");
                 JSONObject jsonObject = json.jsonObject;
                 try {
-                    JSONArray results = jsonObject.getJSONArray("Results");
+                    JSONArray results = jsonObject.getJSONArray("results");
                     Log.i(TAG, "Results: " + results);
                     movies.addAll(Movies.fromJsonArray(results));
                     movieAdapter.notifyDataSetChanged();
