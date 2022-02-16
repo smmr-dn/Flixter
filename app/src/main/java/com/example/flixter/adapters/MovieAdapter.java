@@ -1,21 +1,35 @@
 package com.example.flixter.adapters;
 
 import java.util.List;
+
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.example.flixter.DetailActivity;
+import com.example.flixter.MainActivity;
 import com.example.flixter.R;
 import com.example.flixter.models.Movies;
+
+import org.parceler.Parcels;
+
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
 
@@ -54,15 +68,21 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
+        RelativeLayout container;
         TextView tvTitle;
         TextView tvOverview;
         ImageView ivPoster;
+        ImageView ivIcon;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvOverview = itemView.findViewById(R.id.tvOverview);
             ivPoster = itemView.findViewById(R.id.ivPoster);
+            ivIcon = itemView.findViewById(R.id.ivIcon);
+            container = itemView.findViewById(R.id.container);
+
         }
 
         public void bind(Movies movies) {
@@ -77,8 +97,25 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
             else{
                 imageURL = movies.getPosterPath();
             }
+            int radius = 50;
+            int margin = 20;
             //Else, go with default
-            Glide.with(context).load(imageURL).into(ivPoster);
+            Glide.with(context).load(imageURL).centerCrop().transform(new RoundedCornersTransformation(radius, margin)).into(ivPoster);
+
+            //1. Register click listener on the overlay icon
+            ivIcon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //2. Navigate to a new activity on tap
+                    Intent i = new Intent(context, DetailActivity.class);
+                    i.putExtra("movie", Parcels.wrap(movies));
+                    Pair<View, String> p1 = Pair.create((View)ivPoster, "transition");
+                    Pair<View, String> p2 = Pair.create((View)tvTitle, "transitionTitle");
+                    ActivityOptionsCompat options;
+                    options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context, p1, p2);
+                    context.startActivity(i, options.toBundle());
+                }
+            });
         }
     }
 }

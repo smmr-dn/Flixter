@@ -2,29 +2,32 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/ivPoster"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="-3dp"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="0dp"
+        android:transitionName="transition"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:transitionName="transitionTitle"
         android:layout_alignParentTop="true"
         android:layout_marginStart="11dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/ivPoster"
-        android:textSize="26sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         tools:text="Spider-Man: No Way Home" />
 
@@ -41,5 +44,15 @@
         android:fontFamily="casual"
         android:textSize="10sp"
         tools:text="Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man." />
+
+    <ImageView
+        android:id="@+id/ivIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="47dp"
+        app:srcCompat="@drawable/yt_icon_mono_light" />
 
 </RelativeLayout>
