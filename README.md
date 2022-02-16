@@ -19,7 +19,7 @@
 
 ### App Walkthough GIF
 
-<img src="YOUR_GIF_URL_HERE" width=250><br>
+<img src="walkthrough_part2.gif" width=250><br>
 
 ### Notes
 One of my challenges was to walkthrough additional instructions for the stretched stories, since I have been following the pre-exisitng basic version instructions, I was quite challenging to play around and experiment with shared transition elements as well as playing YouTube videos automatically.
