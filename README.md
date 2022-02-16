@@ -22,8 +22,7 @@
 <img src="YOUR_GIF_URL_HERE" width=250><br>
 
 ### Notes
-
-Describe any challenges encountered while building the app.
+One of my challenges was to walkthrough additional instructions for the stretched stories, since I have been following the pre-exisitng basic version instructions, I was quite challenging to play around and experiment with shared transition elements as well as playing YouTube videos automatically.
 
 ## Open-source libraries used
 - [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
