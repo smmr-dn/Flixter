@@ -48,9 +48,6 @@ One of my challenges was to walkthrough additional instructions for the stretche
 
 <img src="walkthrough.gif" width=250><br>
 
-### Notes
-Describe any challenges encountered while building the app.
-
 ### Open-source libraries used
 
 - [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
